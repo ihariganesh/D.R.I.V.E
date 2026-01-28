@@ -1,0 +1,4 @@
+opencv-python==4.9.0.80
+numpy==1.26.3
+requests==2.31.0
+python-dotenv==1.0.0
