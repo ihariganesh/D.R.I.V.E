@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { 
-  CameraIcon, 
-  ExclamationTriangleIcon, 
-  TruckIcon, 
-  SignalIcon 
+import {
+  CameraIcon,
+  ExclamationTriangleIcon,
+  TruckIcon,
+  SignalIcon
 } from '@heroicons/react/24/outline'
 
 interface DashboardStats {
@@ -13,7 +13,10 @@ interface DashboardStats {
   active_events: number
   emergency_vehicles_active: number
   green_wave_protocols_active: number
+  weather: any
 }
+
+import WeatherWidget from '../components/WeatherWidget'
 
 export default function Dashboard() {
   const [stats, setStats] = useState<DashboardStats | null>(null)
@@ -79,6 +82,7 @@ export default function Dashboard() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <WeatherWidget weather={stats?.weather} />
         {statCards.map((stat) => {
           const Icon = stat.icon
           return (
@@ -112,6 +116,12 @@ export default function Dashboard() {
             <div className="flex justify-between items-center">
               <span className="text-gray-600">Digital Twin</span>
               <span className="badge badge-success">Online</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span className="text-gray-600">Pedestrian Risk</span>
+              <span className={`badge ${stats?.active_events ? 'badge-warning' : 'badge-success'}`}>
+                {stats?.active_events ? 'Elevated' : 'Low'}
+              </span>
             </div>
           </div>
         </div>

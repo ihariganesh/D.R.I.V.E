@@ -10,47 +10,67 @@ from typing import Dict, List, Tuple
 
 class TrafficDensityEstimator:
     def __init__(self, model_path: str = "yolov8n.pt"):
-        """Initialize YOLO model for vehicle detection"""
+        """Initialize YOLO model for detection"""
         self.model = YOLO(model_path)
         self.vehicle_classes = [2, 3, 5, 7]  # car, motorcycle, bus, truck
+        self.pedestrian_classes = [0]       # person
         
     def process_frame(self, frame: np.ndarray) -> Dict:
         """
-        Process a single frame to detect vehicles
-        
-        Returns:
-            Dict with vehicle count, density, and average speed estimate
+        Process a single frame to detect vehicles and pedestrians
         """
-        results = self.model(frame, classes=self.vehicle_classes)
+        # Detect vehicles
+        vehicle_results = self.model(frame, classes=self.vehicle_classes, verbose=False)
+        # Detect pedestrians
+        pedestrian_results = self.model(frame, classes=self.pedestrian_classes, verbose=False)
         
         vehicle_count = 0
+        pedestrian_count = 0
         detections = []
         
-        for result in results:
+        for result in vehicle_results:
             boxes = result.boxes
             for box in boxes:
                 x1, y1, x2, y2 = box.xyxy[0].cpu().numpy()
                 conf = box.conf[0].cpu().numpy()
                 cls = int(box.cls[0].cpu().numpy())
-                
                 vehicle_count += 1
                 detections.append({
+                    "type": "vehicle",
                     "bbox": [float(x1), float(y1), float(x2), float(y2)],
                     "confidence": float(conf),
                     "class": cls
                 })
         
-        # Calculate density (vehicles per square meter of road)
-        frame_area = frame.shape[0] * frame.shape[1] / 1000000  # Convert to square meters
-        density = vehicle_count / frame_area if frame_area > 0 else 0
+        for result in pedestrian_results:
+            boxes = result.boxes
+            for box in boxes:
+                x1, y1, x2, y2 = box.xyxy[0].cpu().numpy()
+                conf = box.conf[0].cpu().numpy()
+                cls = int(box.cls[0].cpu().numpy())
+                pedestrian_count += 1
+                detections.append({
+                    "type": "pedestrian",
+                    "bbox": [float(x1), float(y1), float(x2), float(y2)],
+                    "confidence": float(conf),
+                    "class": cls
+                })
+
+        # Calculate density
+        frame_area = frame.shape[0] * frame.shape[1] / 1000000 
+        vehicle_density = vehicle_count / frame_area if frame_area > 0 else 0
+        pedestrian_density = pedestrian_count / (frame_area / 4) if frame_area > 0 else 0 # Normalized to typical sidewalk area
         
-        # Estimate congestion level (0-1)
-        congestion_level = min(1.0, vehicle_count / 50)  # Normalized to max 50 vehicles
+        congestion_level = min(1.0, vehicle_count / 50)
+        pedestrian_risk = min(1.0, pedestrian_count / 20) # Risk increases with crowd
         
         return {
             "vehicle_count": vehicle_count,
-            "density": density,
+            "pedestrian_count": pedestrian_count,
+            "vehicle_density": vehicle_density,
+            "pedestrian_density": pedestrian_density,
             "congestion_level": congestion_level,
+            "pedestrian_risk_level": pedestrian_risk,
             "detections": detections
         }
     

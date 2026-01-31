@@ -4,17 +4,22 @@ from sqlalchemy import select, text, func
 from database.connection import get_db
 from database.models import User, Camera, TrafficEvent, EmergencyVehicle, TrafficLight
 from services.auth_service import get_current_user
+from services.weather_service import get_weather_service
 
 router = APIRouter()
 
 @router.get("/overview")
 async def get_dashboard_overview(
     db: AsyncSession = Depends(get_db),
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
+    weather_service = Depends(get_weather_service)
 ):
     """
     Get dashboard overview with real-time statistics
     """
+    # Get weather
+    weather = await weather_service.get_current_weather()
+    
     # Get active cameras
     cameras_result = await db.execute(
         select(func.count(Camera.id)).where(Camera.status == 'active')
@@ -45,5 +50,6 @@ async def get_dashboard_overview(
         "active_events": active_events,
         "emergency_vehicles_active": active_emergency,
         "green_wave_protocols_active": green_wave_count,
+        "weather": weather,
         "timestamp": func.now()
     }

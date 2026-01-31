@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
 
-from api.routes import cameras, traffic_lights, sign_boards, events, emergency, users, decisions, overrides, simulations, dashboard
+from api.routes import cameras, traffic_lights, sign_boards, events, emergency, users, decisions, overrides, simulations, dashboard, weather
 from database.connection import init_db, close_db
 from services.websocket_manager import manager
 
@@ -48,6 +48,7 @@ app.include_router(decisions.router, prefix="/api/v1/decisions", tags=["AI Decis
 app.include_router(overrides.router, prefix="/api/v1/overrides", tags=["Manual Overrides"])
 app.include_router(simulations.router, prefix="/api/v1/simulations", tags=["Simulations"])
 app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["Dashboard"])
+app.include_router(weather.router, prefix="/api/v1/weather", tags=["Weather"])
 
 @app.get("/")
 async def root():
