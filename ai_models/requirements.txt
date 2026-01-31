@@ -1,0 +1,19 @@
+# D.R.I.V.E AI Models Requirements
+# Deep Learning & Computer Vision
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0  # YOLO v8
+opencv-python>=4.8.0
+opencv-contrib-python>=4.8.0
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Data Processing
+pandas>=2.0.0
+pillow>=10.0.0
+
+# Utilities
+tqdm>=4.65.0
+pyyaml>=6.0

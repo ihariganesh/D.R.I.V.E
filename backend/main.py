@@ -3,12 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
+load_dotenv()
 
 from api.routes import cameras, traffic_lights, sign_boards, events, emergency, users, decisions, overrides, simulations, dashboard, weather
 from database.connection import init_db, close_db
 from services.websocket_manager import manager
-
-load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

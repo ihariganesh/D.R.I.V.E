@@ -3,6 +3,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from typing import List
 from datetime import datetime, timedelta
+import os
 
 from database.connection import get_db
 from database.models import User
