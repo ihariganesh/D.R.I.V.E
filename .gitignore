@@ -89,3 +89,15 @@ temp/
 # OS
 .DS_Store
 Thumbs.db
+
+# PID files
+*.pid
+.pid
+
+# YOLO weights
+yolov8*.pt
+
+# SQLite databases
+*.db
+events.db
+simulation_logs.db

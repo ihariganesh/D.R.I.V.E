@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    D.R.I.V.E - SUMO GUI Settings
+    Visual configuration for SUMO-GUI
+-->
+<viewsettings>
+    <scheme name="D.R.I.V.E">
+        <background color="#1a1a2e"/>
+        
+        <edges widthExaggeration="2" laneShowBorders="true" antialiase="true">
+            <colorScheme name="uniform" interpolate="false">
+                <entry color="#4a4a6a"/>
+            </colorScheme>
+        </edges>
+        
+        <vehicles vehicleQuality="2" vehicleSize="1.5" vehicleText="false">
+            <colorScheme name="by type"/>
+        </vehicles>
+        
+        <junctions junctionSize="1" drawLinkJunctionIndex="false" drawLinkTLIndex="false">
+            <colorScheme name="by type"/>
+        </junctions>
+        
+        <additionals addMode="0" addSize="1"/>
+        
+        <legend showSizeLegend="true" showColorLegend="true"/>
+    </scheme>
+    
+    <delay value="100"/>
+    <viewport zoom="200" x="200" y="200"/>
+    <decal file="logo.png" centerX="380" centerY="20" width="40" height="40"/>
+    
+</viewsettings>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    D.R.I.V.E - City Grid Network
+    A 4x4 grid network with traffic lights at intersections
+    Used for traffic simulation and Green Wave protocol testing
+-->
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,400.00,400.00" origBoundary="0.00,0.00,400.00,400.00" projParameter="!"/>
+
+    <!-- Edge Types -->
+    <type id="main_road" priority="3" numLanes="2" speed="13.89" width="3.20"/>
+    <type id="secondary" priority="2" numLanes="1" speed="11.11" width="3.00"/>
+
+    <!-- Junctions (Traffic Light Intersections) -->
+    <junction id="J1" type="traffic_light" x="100.00" y="100.00" incLanes="E_W_1_0 E_W_1_1 S_N_1_0 S_N_1_1 W_E_1_0 W_E_1_1 N_S_1_0 N_S_1_1" intLanes="" shape="97.00,106.40 103.00,106.40 103.60,103.60 104.40,102.80 105.60,102.24 107.20,101.92 109.20,101.84 109.20,96.80 106.40,96.20 105.60,95.40 105.04,94.20 104.72,92.60 104.64,90.60 99.60,90.60 99.00,93.40 98.20,94.20 97.00,95.24 95.40,96.52 93.40,98.04 90.80,99.84 90.80,104.80 93.60,104.20 94.40,103.40 95.44,102.80 96.72,102.40 98.24,102.24"/>
+    <junction id="J2" type="traffic_light" x="200.00" y="100.00" incLanes="E_W_2_0 E_W_2_1 S_N_2_0 S_N_2_1 W_E_2_0 W_E_2_1 N_S_2_0 N_S_2_1" intLanes="" shape="197.00,106.40 203.00,106.40 203.60,103.60 204.40,102.80 205.60,102.24 207.20,101.92 209.20,101.84 209.20,96.80 206.40,96.20 205.60,95.40 205.04,94.20 204.72,92.60 204.64,90.60 199.60,90.60 199.00,93.40 198.20,94.20 197.00,95.24 195.40,96.52 193.40,98.04 190.80,99.84 190.80,104.80 193.60,104.20 194.40,103.40 195.44,102.80 196.72,102.40 198.24,102.24"/>
+    <junction id="J3" type="traffic_light" x="300.00" y="100.00" incLanes="E_W_3_0 E_W_3_1 S_N_3_0 S_N_3_1 W_E_3_0 W_E_3_1 N_S_3_0 N_S_3_1" intLanes="" shape="297.00,106.40 303.00,106.40 303.60,103.60 304.40,102.80 305.60,102.24 307.20,101.92 309.20,101.84 309.20,96.80 306.40,96.20 305.60,95.40 305.04,94.20 304.72,92.60 304.64,90.60 299.60,90.60"/>
+    <junction id="J4" type="traffic_light" x="100.00" y="200.00" incLanes="E_W_4_0 E_W_4_1 S_N_4_0 S_N_4_1 W_E_4_0 W_E_4_1 N_S_4_0 N_S_4_1" intLanes="" shape="97.00,206.40 103.00,206.40 103.60,203.60 104.40,202.80 105.60,202.24 107.20,201.92 109.20,201.84 109.20,196.80 106.40,196.20 105.60,195.40 105.04,194.20 104.72,192.60 104.64,190.60 99.60,190.60"/>
+    <junction id="J5" type="traffic_light" x="200.00" y="200.00" incLanes="E_W_5_0 E_W_5_1 S_N_5_0 S_N_5_1 W_E_5_0 W_E_5_1 N_S_5_0 N_S_5_1" intLanes="" shape="197.00,206.40 203.00,206.40 203.60,203.60 204.40,202.80 205.60,202.24 207.20,201.92 209.20,201.84 209.20,196.80 206.40,196.20 205.60,195.40 205.04,194.20 204.72,192.60 204.64,190.60 199.60,190.60"/>
+    <junction id="J6" type="traffic_light" x="300.00" y="200.00" incLanes="E_W_6_0 E_W_6_1 S_N_6_0 S_N_6_1 W_E_6_0 W_E_6_1 N_S_6_0 N_S_6_1" intLanes="" shape="297.00,206.40 303.00,206.40 303.60,203.60 304.40,202.80 305.60,202.24 307.20,201.92 309.20,201.84 309.20,196.80 306.40,196.20 305.60,195.40 305.04,194.20 304.72,192.60 304.64,190.60 299.60,190.60"/>
+    <junction id="J7" type="traffic_light" x="100.00" y="300.00" incLanes="E_W_7_0 E_W_7_1 S_N_7_0 S_N_7_1 W_E_7_0 W_E_7_1 N_S_7_0 N_S_7_1" intLanes="" shape="97.00,306.40 103.00,306.40 103.60,303.60 104.40,302.80 105.60,302.24 107.20,301.92 109.20,301.84 109.20,296.80 106.40,296.20 105.60,295.40 105.04,294.20 104.72,292.60 104.64,290.60 99.60,290.60"/>
+    <junction id="J8" type="traffic_light" x="200.00" y="300.00" incLanes="E_W_8_0 E_W_8_1 S_N_8_0 S_N_8_1 W_E_8_0 W_E_8_1 N_S_8_0 N_S_8_1" intLanes="" shape="197.00,306.40 203.00,306.40 203.60,303.60 204.40,302.80 205.60,302.24 207.20,301.92 209.20,301.84 209.20,296.80 206.40,296.20 205.60,295.40 205.04,294.20 204.72,292.60 204.64,290.60 199.60,290.60"/>
+    <junction id="J9" type="traffic_light" x="300.00" y="300.00" incLanes="E_W_9_0 E_W_9_1 S_N_9_0 S_N_9_1 W_E_9_0 W_E_9_1 N_S_9_0 N_S_9_1" intLanes="" shape="297.00,306.40 303.00,306.40 303.60,303.60 304.40,302.80 305.60,302.24 307.20,301.92 309.20,301.84 309.20,296.80 306.40,296.20 305.60,295.40 305.04,294.20 304.72,292.60 304.64,290.60 299.60,290.60"/>
+
+    <!-- Edge Junctions (Entry/Exit Points) -->
+    <junction id="W_entry" type="priority" x="0.00" y="100.00" incLanes="" intLanes="" shape="0.00,103.20 0.00,96.80"/>
+    <junction id="E_exit" type="priority" x="400.00" y="100.00" incLanes="W_E_exit_0 W_E_exit_1" intLanes="" shape="400.00,96.80 400.00,103.20"/>
+    <junction id="S_entry" type="priority" x="100.00" y="0.00" incLanes="" intLanes="" shape="96.80,0.00 103.20,0.00"/>
+    <junction id="N_exit" type="priority" x="100.00" y="400.00" incLanes="S_N_exit_0 S_N_exit_1" intLanes="" shape="103.20,400.00 96.80,400.00"/>
+
+    <!-- Horizontal Edges (West to East) -->
+    <edge id="W_E_1" from="W_entry" to="J1" priority="3" numLanes="2" speed="13.89" shape="0.00,100.00 100.00,100.00"/>
+    <edge id="W_E_2" from="J1" to="J2" priority="3" numLanes="2" speed="13.89" shape="100.00,100.00 200.00,100.00"/>
+    <edge id="W_E_3" from="J2" to="J3" priority="3" numLanes="2" speed="13.89" shape="200.00,100.00 300.00,100.00"/>
+    <edge id="W_E_exit" from="J3" to="E_exit" priority="3" numLanes="2" speed="13.89" shape="300.00,100.00 400.00,100.00"/>
+
+    <!-- Horizontal Edges (East to West) -->
+    <edge id="E_W_1" from="J1" to="W_entry" priority="3" numLanes="2" speed="13.89" shape="100.00,100.00 0.00,100.00"/>
+    <edge id="E_W_2" from="J2" to="J1" priority="3" numLanes="2" speed="13.89" shape="200.00,100.00 100.00,100.00"/>
+    <edge id="E_W_3" from="J3" to="J2" priority="3" numLanes="2" speed="13.89" shape="300.00,100.00 200.00,100.00"/>
+
+    <!-- Vertical Edges (South to North) -->
+    <edge id="S_N_1" from="S_entry" to="J1" priority="3" numLanes="2" speed="13.89" shape="100.00,0.00 100.00,100.00"/>
+    <edge id="S_N_2" from="J1" to="J4" priority="3" numLanes="2" speed="13.89" shape="100.00,100.00 100.00,200.00"/>
+    <edge id="S_N_3" from="J4" to="J7" priority="3" numLanes="2" speed="13.89" shape="100.00,200.00 100.00,300.00"/>
+    <edge id="S_N_exit" from="J7" to="N_exit" priority="3" numLanes="2" speed="13.89" shape="100.00,300.00 100.00,400.00"/>
+
+    <!-- Vertical Edges (North to South) -->
+    <edge id="N_S_1" from="J7" to="J4" priority="3" numLanes="2" speed="13.89" shape="100.00,300.00 100.00,200.00"/>
+    <edge id="N_S_2" from="J4" to="J1" priority="3" numLanes="2" speed="13.89" shape="100.00,200.00 100.00,100.00"/>
+    <edge id="N_S_3" from="J1" to="S_entry" priority="3" numLanes="2" speed="13.89" shape="100.00,100.00 100.00,0.00"/>
+
+    <!-- Additional Cross Streets for Grid -->
+    <edge id="Main_Street" from="J1" to="J3" priority="4" numLanes="2" speed="16.67" shape="100.00,100.00 300.00,100.00">
+        <lane id="Main_Street_0" index="0" speed="16.67" length="200.00"/>
+        <lane id="Main_Street_1" index="1" speed="16.67" length="200.00"/>
+    </edge>
+
+    <edge id="Brigade_Road" from="J4" to="J6" priority="4" numLanes="2" speed="16.67" shape="100.00,200.00 300.00,200.00">
+        <lane id="Brigade_Road_0" index="0" speed="16.67" length="200.00"/>
+        <lane id="Brigade_Road_1" index="1" speed="16.67" length="200.00"/>
+    </edge>
+
+    <!-- Traffic Light Programs -->
+    <tlLogic id="J1" type="static" programID="0" offset="0">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J2" type="static" programID="0" offset="10">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J3" type="static" programID="0" offset="20">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J4" type="static" programID="0" offset="5">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J5" type="static" programID="0" offset="15">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J6" type="static" programID="0" offset="25">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J7" type="static" programID="0" offset="10">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J8" type="static" programID="0" offset="20">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+    <tlLogic id="J9" type="static" programID="0" offset="30">
+        <phase duration="31" state="GGGGrrrrGGGGrrrr"/>
+        <phase duration="4"  state="yyyyrrrryyyyrrrr"/>
+        <phase duration="31" state="rrrrGGGGrrrrGGGG"/>
+        <phase duration="4"  state="rrrryyyyrrrryyyy"/>
+    </tlLogic>
+
+</net>

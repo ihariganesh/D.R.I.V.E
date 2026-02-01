@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    D.R.I.V.E - Vehicle Routes
+    Defines vehicle types and routes for the simulation
+    Includes regular vehicles, ambulances, and congestion scenarios
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Vehicle Types -->
+    <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="4.5" maxSpeed="16.67" color="0.8,0.8,0.1"/>
+    <vType id="truck" accel="1.5" decel="3.5" sigma="0.5" length="10.0" maxSpeed="11.11" color="0.5,0.5,0.5"/>
+    <vType id="bus" accel="1.8" decel="4.0" sigma="0.5" length="12.0" maxSpeed="13.89" color="0.2,0.6,0.2"/>
+    <vType id="motorcycle" accel="4.0" decel="6.0" sigma="0.3" length="2.0" maxSpeed="22.22" color="0.9,0.1,0.1"/>
+    <vType id="ambulance" accel="3.5" decel="5.0" sigma="0.2" length="6.0" maxSpeed="25.00" color="1.0,0.0,0.0" guiShape="emergency"/>
+    <vType id="fire_truck" accel="2.0" decel="4.0" sigma="0.3" length="8.0" maxSpeed="19.44" color="1.0,0.2,0.0" guiShape="emergency"/>
+    <vType id="police" accel="3.8" decel="5.5" sigma="0.2" length="5.0" maxSpeed="27.78" color="0.0,0.0,1.0" guiShape="passenger"/>
+
+    <!-- Routes -->
+    <route id="route_horizontal" edges="W_E_1 W_E_2 W_E_3 W_E_exit"/>
+    <route id="route_vertical" edges="S_N_1 S_N_2 S_N_3 S_N_exit"/>
+    <route id="route_main_street" edges="W_E_1 Main_Street W_E_exit"/>
+    <route id="route_brigade_road" edges="S_N_1 S_N_2 Brigade_Road"/>
+
+    <!-- Regular Traffic Flow - Continuous -->
+    <flow id="flow_cars_h" type="car" route="route_horizontal" begin="0" end="3600" vehsPerHour="200" departLane="best" departSpeed="max"/>
+    <flow id="flow_cars_v" type="car" route="route_vertical" begin="0" end="3600" vehsPerHour="150" departLane="best" departSpeed="max"/>
+    <flow id="flow_trucks" type="truck" route="route_horizontal" begin="0" end="3600" vehsPerHour="30" departLane="0" departSpeed="max"/>
+    <flow id="flow_motorcycles" type="motorcycle" route="route_horizontal" begin="0" end="3600" vehsPerHour="50" departLane="1" departSpeed="max"/>
+
+    <!-- Congestion Scenario - Peak Hour (10:00-11:00) -->
+    <flow id="congestion_cars_1" type="car" route="route_horizontal" begin="600" end="1200" vehsPerHour="500" departLane="best" departSpeed="max"/>
+    <flow id="congestion_cars_2" type="car" route="route_vertical" begin="600" end="1200" vehsPerHour="400" departLane="best" departSpeed="max"/>
+    <flow id="congestion_trucks" type="truck" route="route_main_street" begin="600" end="1200" vehsPerHour="80" departLane="0" departSpeed="max"/>
+
+    <!-- Emergency Vehicles - Ambulances -->
+    <vehicle id="AMB001" type="ambulance" route="route_horizontal" depart="300">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+    <vehicle id="AMB002" type="ambulance" route="route_vertical" depart="900">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+    <vehicle id="AMB003" type="ambulance" route="route_main_street" depart="1500">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+
+    <!-- Emergency Vehicles - Fire Trucks -->
+    <vehicle id="FIRE001" type="fire_truck" route="route_horizontal" depart="600">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+
+    <!-- Emergency Vehicles - Police -->
+    <vehicle id="POLICE001" type="police" route="route_vertical" depart="450">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+    <vehicle id="POLICE002" type="police" route="route_horizontal" depart="1200">
+        <param key="has.bluelight.device" value="true"/>
+    </vehicle>
+
+    <!-- Bus Schedule -->
+    <flow id="bus_route_1" type="bus" route="route_horizontal" begin="0" end="3600" period="300" departLane="0" departSpeed="max"/>
+    <flow id="bus_route_2" type="bus" route="route_vertical" begin="60" end="3600" period="300" departLane="0" departSpeed="max"/>
+
+</routes>
