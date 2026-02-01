@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <!-- 3x3 Grid of intersections with traffic lights -->
+    <node id="J1" x="0.0"   y="0.0"   type="traffic_light"/>
+    <node id="J2" x="200.0" y="0.0"   type="traffic_light"/>
+    <node id="J3" x="400.0" y="0.0"   type="traffic_light"/>
+    <node id="J4" x="0.0"   y="200.0" type="traffic_light"/>
+    <node id="J5" x="200.0" y="200.0" type="traffic_light"/>
+    <node id="J6" x="400.0" y="200.0" type="traffic_light"/>
+    <node id="J7" x="0.0"   y="400.0" type="traffic_light"/>
+    <node id="J8" x="200.0" y="400.0" type="traffic_light"/>
+    <node id="J9" x="400.0" y="400.0" type="traffic_light"/>
+    
+    <!-- Entry/Exit points -->
+    <node id="W1" x="-100.0" y="0.0"   type="priority"/>
+    <node id="W2" x="-100.0" y="200.0" type="priority"/>
+    <node id="W3" x="-100.0" y="400.0" type="priority"/>
+    <node id="E1" x="500.0"  y="0.0"   type="priority"/>
+    <node id="E2" x="500.0"  y="200.0" type="priority"/>
+    <node id="E3" x="500.0"  y="400.0" type="priority"/>
+    <node id="S1" x="0.0"    y="-100.0" type="priority"/>
+    <node id="S2" x="200.0"  y="-100.0" type="priority"/>
+    <node id="S3" x="400.0"  y="-100.0" type="priority"/>
+    <node id="N1" x="0.0"    y="500.0" type="priority"/>
+    <node id="N2" x="200.0"  y="500.0" type="priority"/>
+    <node id="N3" x="400.0"  y="500.0" type="priority"/>
+</nodes>

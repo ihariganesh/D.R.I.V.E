@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges>
+    <!-- Horizontal roads (West-East) -->
+    <edge id="W1-J1" from="W1" to="J1" numLanes="2" speed="13.89"/>
+    <edge id="J1-J2" from="J1" to="J2" numLanes="2" speed="13.89"/>
+    <edge id="J2-J3" from="J2" to="J3" numLanes="2" speed="13.89"/>
+    <edge id="J3-E1" from="J3" to="E1" numLanes="2" speed="13.89"/>
+    
+    <edge id="W2-J4" from="W2" to="J4" numLanes="2" speed="13.89"/>
+    <edge id="J4-J5" from="J4" to="J5" numLanes="2" speed="13.89"/>
+    <edge id="J5-J6" from="J5" to="J6" numLanes="2" speed="13.89"/>
+    <edge id="J6-E2" from="J6" to="E2" numLanes="2" speed="13.89"/>
+    
+    <edge id="W3-J7" from="W3" to="J7" numLanes="2" speed="13.89"/>
+    <edge id="J7-J8" from="J7" to="J8" numLanes="2" speed="13.89"/>
+    <edge id="J8-J9" from="J8" to="J9" numLanes="2" speed="13.89"/>
+    <edge id="J9-E3" from="J9" to="E3" numLanes="2" speed="13.89"/>
+    
+    <!-- Reverse horizontal -->
+    <edge id="J1-W1" from="J1" to="W1" numLanes="2" speed="13.89"/>
+    <edge id="J2-J1" from="J2" to="J1" numLanes="2" speed="13.89"/>
+    <edge id="J3-J2" from="J3" to="J2" numLanes="2" speed="13.89"/>
+    <edge id="E1-J3" from="E1" to="J3" numLanes="2" speed="13.89"/>
+    
+    <!-- Vertical roads (South-North) -->
+    <edge id="S1-J1" from="S1" to="J1" numLanes="2" speed="13.89"/>
+    <edge id="J1-J4" from="J1" to="J4" numLanes="2" speed="13.89"/>
+    <edge id="J4-J7" from="J4" to="J7" numLanes="2" speed="13.89"/>
+    <edge id="J7-N1" from="J7" to="N1" numLanes="2" speed="13.89"/>
+    
+    <edge id="S2-J2" from="S2" to="J2" numLanes="2" speed="13.89"/>
+    <edge id="J2-J5" from="J2" to="J5" numLanes="2" speed="13.89"/>
+    <edge id="J5-J8" from="J5" to="J8" numLanes="2" speed="13.89"/>
+    <edge id="J8-N2" from="J8" to="N2" numLanes="2" speed="13.89"/>
+    
+    <edge id="S3-J3" from="S3" to="J3" numLanes="2" speed="13.89"/>
+    <edge id="J3-J6" from="J3" to="J6" numLanes="2" speed="13.89"/>
+    <edge id="J6-J9" from="J6" to="J9" numLanes="2" speed="13.89"/>
+    <edge id="J9-N3" from="J9" to="N3" numLanes="2" speed="13.89"/>
+    
+    <!-- Reverse vertical -->
+    <edge id="J1-S1" from="J1" to="S1" numLanes="2" speed="13.89"/>
+    <edge id="J4-J1" from="J4" to="J1" numLanes="2" speed="13.89"/>
+    <edge id="J7-J4" from="J7" to="J4" numLanes="2" speed="13.89"/>
+    <edge id="N1-J7" from="N1" to="J7" numLanes="2" speed="13.89"/>
+</edges>

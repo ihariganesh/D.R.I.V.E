@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="city.net.xml"/>
+        <route-files value="routes.rou.xml"/>
+        <additional-files value="vtypes.add.xml"/>
+        <gui-settings-file value="gui-settings.xml"/>
+    </input>
+    
+    <time>
+        <begin value="0"/>
+        <end value="7200"/>
+        <step-length value="0.1"/>
+    </time>
+    
+    <processing>
+        <time-to-teleport value="-1"/>
+        <collision.action value="warn"/>
+        <collision.check-junctions value="true"/>
+        <pedestrian.model value="striping"/>
+        <pedestrian.striping.stripe-width value="0.55"/>
+    </processing>
+    
+    <routing>
+        <device.rerouting.probability value="0.7"/>
+        <device.rerouting.period value="300"/>
+    </routing>
+    
+    <report>
+        <verbose value="true"/>
+        <no-step-log value="false"/>
+        <duration-log.statistics value="true"/>
+        <statistic-output value="stats.xml"/>
+    </report>
+    
+    <gui_only>
+        <gui-settings-file value="gui-settings.xml"/>
+        <start value="true"/>
+        <quit-on-end value="false"/>
+        <tracker-interval value="1"/>
+        <window-pos value="50,50"/>
+        <window-size value="1600,900"/>
+    </gui_only>
+</configuration>

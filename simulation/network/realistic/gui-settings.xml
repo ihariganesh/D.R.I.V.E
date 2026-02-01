@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewsettings>
+    <scheme name="D.R.I.V.E Realistic">
+        <!-- Dark background for better contrast -->
+        <background backgroundColor="0.1,0.1,0.15" showGrid="false"/>
+        
+        <!-- Edges (Roads) Settings -->
+        <edges laneEdgeMode="0" scaleMode="0" 
+               laneShowBorders="true" showLinkDecals="true" 
+               showLinkRules="true" showRails="true"
+               edgeName_show="false" edgeName_size="50"
+               streetName_show="true" streetName_size="55">
+            <colorScheme name="by speed (lanewise)">
+                <entry color="red" threshold="0"/>
+                <entry color="orange" threshold="5"/>
+                <entry color="yellow" threshold="10"/>
+                <entry color="green" threshold="15"/>
+                <entry color="cyan" threshold="20"/>
+            </colorScheme>
+        </edges>
+        
+        <!-- Vehicle Settings -->
+        <vehicles vehicleMode="9" vehicleQuality="3" 
+                  minVehicleSize="1" vehicleExaggeration="1"
+                  showBlinker="true" drawMinGap="false"
+                  vehicleName_show="false" vehicleName_size="50">
+            <colorScheme name="by speed">
+                <entry color="red" threshold="0"/>
+                <entry color="orange" threshold="10"/>
+                <entry color="yellow" threshold="20"/>
+                <entry color="green" threshold="30"/>
+                <entry color="cyan" threshold="40"/>
+                <entry color="blue" threshold="50"/>
+            </colorScheme>
+        </vehicles>
+        
+        <!-- Junction Settings -->
+        <junctions junctionMode="0" drawLinkTLIndex="false" 
+                   drawLinkJunctionIndex="false" 
+                   junctionName_show="false" junctionName_size="50"
+                   internalJunctionName_show="false">
+        </junctions>
+        
+        <!-- Persons/Pedestrians -->
+        <persons personMode="0" personQuality="2" 
+                 personExaggeration="1" personName_show="false">
+        </persons>
+        
+        <!-- Additional visualization -->
+        <additionals addMode="0" addSize="1" addName_show="false"/>
+        
+        <!-- POIs -->
+        <pois poiSize="0" poiName_show="false"/>
+        
+        <!-- Polygons (buildings) -->
+        <polys polySize="0" polyName_show="false"/>
+        
+        <!-- 3D Settings -->
+        <opengl dither="true" fps="true" 
+                drawBoundaries="false" forceDrawForPositionSelection="false"/>
+        
+        <!-- Legend -->
+        <legend showSizeLegend="true" showColorLegend="true"/>
+    </scheme>
+    
+    <!-- Default view settings -->
+    <delay value="50"/>
+    <viewport zoom="500" x="0" y="0" angle="0"/>
+    <decals>
+        <!-- Enable decals for realistic road markings -->
+    </decals>
+    
+    <!-- Breakpoints for debugging -->
+    <breakpoints-file value=""/>
+</viewsettings>
