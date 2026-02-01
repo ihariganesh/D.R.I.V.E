@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-02-01T23:46:22.264068+05:30 by Eclipse SUMO GUI v1_26_0+0037-1ae33e2cd60
+<sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="network/realistic/city.net.xml"/>
+        <route-files value="network/realistic/routes.rou.xml"/>
+        <additional-files value="network/realistic/vtypes.add.xml"/>
+    </input>
+
+    <output>
+        <statistic-output value="network/realistic/stats.xml"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="7200"/>
+        <step-length value="0.1"/>
+    </time>
+
+    <processing>
+        <collision.action value="warn"/>
+        <collision.check-junctions value="true"/>
+        <time-to-teleport value="-1"/>
+        <pedestrian.model value="striping"/>
+        <pedestrian.striping.stripe-width value="0.55"/>
+    </processing>
+
+    <routing>
+        <device.rerouting.probability value="0.7"/>
+        <device.rerouting.period value="300"/>
+    </routing>
+
+    <report>
+        <verbose value="true"/>
+        <duration-log.statistics value="true"/>
+        <no-step-log value="false"/>
+    </report>
+
+    <gui_only>
+        <gui-settings-file value="network/realistic/gui-settings.xml"/>
+        <quit-on-end value="false"/>
+        <start value="true"/>
+        <window-size value="1600,900"/>
+        <window-pos value="50,50"/>
+        <tracker-interval value="1"/>
+    </gui_only>
+
+</sumoConfiguration>

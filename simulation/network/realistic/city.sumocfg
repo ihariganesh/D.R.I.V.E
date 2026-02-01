@@ -4,7 +4,6 @@
         <net-file value="city.net.xml"/>
         <route-files value="routes.rou.xml"/>
         <additional-files value="vtypes.add.xml"/>
-        <gui-settings-file value="gui-settings.xml"/>
     </input>
     
     <time>

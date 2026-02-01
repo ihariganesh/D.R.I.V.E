@@ -65,7 +65,7 @@
     
     <!-- Default view settings -->
     <delay value="50"/>
-    <viewport zoom="500" x="0" y="0" angle="0"/>
+    <viewport zoom="200" x="1000" y="1000" angle="0"/>
     <decals>
         <!-- Enable decals for realistic road markings -->
     </decals>
